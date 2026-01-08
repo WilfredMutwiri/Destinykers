@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Destinykers Technologies Design System - Blue & Dark Theme */
+
+@layer base {
+:root {
+    /* Light mode - Destinykers brand colors from logo */
+    --background: 0 0% 100%;
+    --foreground: 207 63% 33%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 63% 33%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 63% 33%;
+
+    --primary: 207 63% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 93% 54%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 207 20% 46%;
+
+    --accent: 32 93% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 207 63% 33%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --surface: 207 63% 33%;
+    --surface-foreground: 0 0% 100%;
+  }
+
+.dark {
+    /* Dark mode - Destinykers brand colors */
+    --background: 207 63% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 207 50% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 207 50% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 32 93% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 63% 33%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 207 40% 20%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 32 93% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 207 40% 20%;
+    --input: 207 40% 20%;
+    --ring: 32 93% 54%;
+
+    /* Custom tokens */
+    --surface: 207 50% 14%;
+    --surface-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply text-primary;
+  }
+
+  .gradient-bg {
+    @apply bg-primary;
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-lg border border-border/50;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.3);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
