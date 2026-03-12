@@ -3,6 +3,7 @@ import { ArrowRight, Target, Eye, Compass, ShieldCheck, Handshake, Layers3 } fro
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const values = [
   {
@@ -30,6 +31,16 @@ const values = [
 export default function About() {
   return (
     <Layout>
+      <PageSEO
+        title="About Destinykers Technologies"
+        description="Meet Destinykers Technologies, a Kenyan digital solutions company focused on websites, AI automation, chatbots, SEO and business systems."
+        path="/about"
+        keywords={[
+          "about destinykers technologies",
+          "kenyan web and ai company",
+          "digital solutions nairobi",
+        ]}
+      />
       <HeroSection
         label="About Destinykers"
         title={

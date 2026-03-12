@@ -20,6 +20,7 @@ import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const sectors = [
   {
@@ -172,9 +173,55 @@ const testimonials = [
   },
 ];
 
+const homeStructuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Destinykers Technologies",
+    url: "https://destinykers.co.ke/",
+    logo: "https://destinykers.co.ke/placeholder.svg",
+    email: "info@destinykers.co.ke",
+    telephone: "+254115651863",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Moi Avenue",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Destinykers Technologies",
+    areaServed: "Kenya",
+    serviceType: [
+      "Web Development",
+      "M-Pesa Integration",
+      "AI Agents and Chatbots",
+      "Business Automation with AI",
+      "SEO Optimization",
+    ],
+    url: "https://destinykers.co.ke/",
+  },
+];
+
 export default function Home() {
   return (
     <Layout>
+      <PageSEO
+        title="Web Development, AI Automation and SEO Services in Kenya"
+        description="Destinykers Technologies builds high-conversion websites, M-Pesa integrations, AI agents, chatbots, and SEO systems for Kenyan businesses."
+        path="/"
+        keywords={[
+          "web development kenya",
+          "ai chatbot development kenya",
+          "business automation with ai",
+          "seo optimization kenya",
+          "m-pesa integration",
+          "nairobi web design company",
+        ]}
+        structuredData={homeStructuredData}
+      />
       <HeroSection
         label="Engineering Reliable Digital Solutions"
         title={

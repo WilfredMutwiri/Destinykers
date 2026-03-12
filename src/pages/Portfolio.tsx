@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const projects = [
   {
@@ -71,6 +72,16 @@ const projects = [
 export default function Portfolio() {
   return (
     <Layout>
+      <PageSEO
+        title="Portfolio - Websites and Digital Projects"
+        description="View Destinykers portfolio of live websites and digital platforms delivered for Kenyan businesses across multiple industries."
+        path="/portfolio"
+        keywords={[
+          "web development portfolio kenya",
+          "nairobi website projects",
+          "business website case studies kenya",
+        ]}
+      />
       <HeroSection
         label="Portfolio"
         title={

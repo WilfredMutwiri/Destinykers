@@ -3,6 +3,7 @@ import { ArrowRight, Search, PenTool, Code2, Rocket, BarChart3, CheckCircle2 } f
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const phases = [
   {
@@ -50,6 +51,16 @@ const phases = [
 export default function Process() {
   return (
     <Layout>
+      <PageSEO
+        title="Delivery Process for Website and AI Projects"
+        description="Learn Destinykers project process from discovery to launch and optimization for website development, AI automation, and SEO campaigns."
+        path="/process"
+        keywords={[
+          "website development process kenya",
+          "ai automation project delivery",
+          "seo implementation process",
+        ]}
+      />
       <HeroSection
         label="Delivery Process"
         title={

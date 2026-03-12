@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { useToast } from "@/hooks/use-toast";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const contactInfo = [
   {
@@ -94,6 +95,17 @@ export default function Contact() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Contact Destinykers Technologies"
+        description="Contact Destinykers for web development, M-Pesa integrations, AI agents, chatbot solutions, AI automation, and SEO optimization in Kenya."
+        path="/contact"
+        keywords={[
+          "contact web developer kenya",
+          "ai chatbot company nairobi",
+          "seo agency kenya",
+          "m-pesa integration experts",
+        ]}
+      />
       <HeroSection
         label="Contact"
         title={

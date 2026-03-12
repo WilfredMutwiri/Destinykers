@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const industryCards = [
   {
@@ -55,6 +56,17 @@ const industryCards = [
 export default function Industries() {
   return (
     <Layout>
+      <PageSEO
+        title="Industries We Serve in Kenya"
+        description="Destinykers builds websites and AI-driven systems for e-commerce, fintech, professional services, hospitality and health businesses in Kenya."
+        path="/industries"
+        keywords={[
+          "ecommerce website kenya",
+          "fintech software kenya",
+          "health and hospitality booking systems",
+          "professional service websites nairobi",
+        ]}
+      />
       <HeroSection
         label="Industry Expertise"
         title={

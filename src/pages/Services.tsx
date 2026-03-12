@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PageSEO } from "@/components/seo/PageSEO";
 
 const services = [
   {
@@ -127,9 +128,34 @@ const services = [
   },
 ];
 
+const servicesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Development, AI Automation, Chatbot Development and SEO",
+  provider: {
+    "@type": "Organization",
+    name: "Destinykers Technologies",
+    url: "https://destinykers.co.ke/services",
+  },
+  areaServed: "Kenya",
+};
+
 export default function Services() {
   return (
     <Layout>
+      <PageSEO
+        title="Services - AI Agents, Automation, SEO and Web Development"
+        description="Explore Destinykers services: custom websites, M-Pesa integration, AI agents, chatbot creation, business automation with AI, and SEO optimization."
+        path="/services"
+        keywords={[
+          "ai agents creation",
+          "chatbot development kenya",
+          "business automation ai kenya",
+          "seo services nairobi",
+          "web design and development kenya",
+        ]}
+        structuredData={servicesStructuredData}
+      />
       <HeroSection
         label="Services"
         title={
