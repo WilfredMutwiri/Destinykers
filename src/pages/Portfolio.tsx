@@ -14,7 +14,7 @@ const projects = [
     technologies: ["Responsive Design", "Lead Capture", "SEO Structure"],
     projectUrl: "https://debsploitsolutions.com/",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/debsploit-VLnBhaOw.png",
   },
   {
     title: "Kamuganka",
@@ -24,7 +24,7 @@ const projects = [
     technologies: ["Portfolio UX", "Brand Messaging", "Clean UI"],
     projectUrl: "https://kamuganka.vercel.app/",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/Kamuganka-2Si7ERHa.png",
   },
   {
     title: "Wake and Shine",
@@ -34,17 +34,17 @@ const projects = [
     technologies: ["Conversion Layout", "Mobile First", "Fast Performance"],
     projectUrl: "https://wakeandshine.co.ke/",
     image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/wakeandshine-WoUwzMHo.png",
   },
   {
     title: "Squidlight",
-    category: "Creative Web Presence",
+    category: "Solar Business Website",
     description:
-      "Modern web experience with expressive visual language and compelling brand storytelling.",
+      "Solar company website with creative design, brand-aligned visuals, and engaging user experience.",
     technologies: ["Creative UI", "Motion Design", "Brand Alignment"],
     projectUrl: "https://squidlight.vercel.app/",
     image:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/squidlight-DF9AYzyf.png",
   },
   {
     title: "FitHub KE",
@@ -54,17 +54,17 @@ const projects = [
     technologies: ["Onboarding UX", "User Journey", "Web App UI"],
     projectUrl: "https://fithubke.vercel.app/welcome",
     image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/fithub-S7j5Pcfz.png",
   },
   {
     title: "Beach Life Fitness",
-    category: "Hospitality and Health",
+    category: "Gym Website",
     description:
-      "Brand-forward fitness website aimed at retention, program discovery, and quick customer action.",
+      "Gym website with clear service presentation, strong conversion focus, and vibrant brand expression.",
     technologies: ["Program Pages", "Conversion CTA", "Lifestyle Branding"],
     projectUrl: "https://beachlifefitness.co.ke/",
     image:
-      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/beachlife-ByS6qUF6.png",
   },
 ];
 

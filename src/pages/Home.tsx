@@ -6,6 +6,9 @@ import {
   Briefcase,
   HeartPulse,
   Smartphone,
+  Bot,
+  Cpu,
+  Search,
   Wallet,
   CalendarClock,
   Boxes,
@@ -66,6 +69,21 @@ const capabilities = [
     title: "Inventory & Ops Tools",
     description: "Custom dashboards for stock, reporting, tax tracking, and operational automation.",
   },
+  {
+    icon: Bot,
+    title: "AI Agents & Chatbots",
+    description: "Conversational assistants for support, lead capture, and customer engagement.",
+  },
+  {
+    icon: Cpu,
+    title: "AI Business Automation",
+    description: "Workflow automation that removes repetitive tasks and improves team productivity.",
+  },
+  {
+    icon: Search,
+    title: "SEO Optimization",
+    description: "Technical and content SEO to increase visibility and attract high-intent traffic.",
+  },
 ];
 
 const featuredProjects = [
@@ -76,7 +94,7 @@ const featuredProjects = [
     technologies: ["Responsive UI", "SEO", "Lead Funnels"],
     projectUrl: "https://debsploitsolutions.com/",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/debsploit-VLnBhaOw.png",
   },
   {
     title: "Wake and Shine",
@@ -85,7 +103,7 @@ const featuredProjects = [
     technologies: ["Brand Story", "Landing UX", "Fast Load"],
     projectUrl: "https://wakeandshine.co.ke/",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/wakeandshine-WoUwzMHo.png",
   },
   {
     title: "FitHub KE",
@@ -94,34 +112,36 @@ const featuredProjects = [
     technologies: ["Fitness UX", "Onboarding", "Interactive Content"],
     projectUrl: "https://fithubke.vercel.app/welcome",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/fithub-S7j5Pcfz.png",
   },
   {
     title: "Beach Life Fitness",
-    category: "Hospitality & Health",
-    description: "Lifestyle-focused website supporting class discovery, trust signals, and inbound client actions.",
+    category: "Gym Website",
+  description:
+      "Gym website with clear service presentation, strong conversion focus, and vibrant brand expression.",
     technologies: ["Conversion Design", "Brand Content", "Mobile UI"],
     projectUrl: "https://beachlifefitness.co.ke/",
     image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/beachlife-ByS6qUF6.png",
   },
   {
     title: "Kamuganka Portfolio",
-    category: "Professional Services",
-    description: "Personal portfolio with clear value positioning and polished presentation for client acquisition.",
+    category: "Self-Help_Group Business Website",
+    description: "Personal brand site for professional visibility, authority positioning, and client conversion.",
     technologies: ["Portfolio UX", "Clean Layout", "CTA Strategy"],
     projectUrl: "https://kamuganka.vercel.app/",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/Kamuganka-2Si7ERHa.png",
   },
   {
     title: "Squidlight",
-    category: "Creative Website",
-    description: "Bold web presentation with modern visual language and strong digital brand framing.",
+    category: "Solar Business Website",
+    description:
+      "Solar company website with creative design, brand-aligned visuals, and engaging user experience.",
     technologies: ["Creative Direction", "Visual Identity", "Web Design"],
     projectUrl: "https://squidlight.vercel.app/",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "https://wilfredmutwiri.vercel.app/assets/squidlight-DF9AYzyf.png",
   },
 ];
 

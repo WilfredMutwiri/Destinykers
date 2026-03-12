@@ -12,8 +12,9 @@ const footerLinks = {
   services: [
     { name: "E-commerce Systems", path: "/services" },
     { name: "M-Pesa Integrations", path: "/services" },
-    { name: "Booking Platforms", path: "/services" },
-    { name: "SME Automation", path: "/services" },
+    { name: "AI Agents & Chatbots", path: "/services" },
+    { name: "AI Business Automation", path: "/services" },
+    { name: "SEO Optimization", path: "/services" },
   ],
 };
 

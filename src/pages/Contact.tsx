@@ -41,6 +41,9 @@ const services = [
   "Booking System",
   "Inventory Dashboard",
   "SME/Fintech Portal",
+  "AI Agents and Chatbots",
+  "Business Automation with AI",
+  "SEO Optimization",
   "General Consultation",
 ];
 

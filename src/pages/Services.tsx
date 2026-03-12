@@ -7,6 +7,9 @@ import {
   Boxes,
   LayoutDashboard,
   Smartphone,
+  Bot,
+  Cpu,
+  Search,
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -86,6 +89,42 @@ const services = [
       "CMS or edit-friendly content flows",
     ],
   },
+  {
+    icon: Bot,
+    title: "AI Agents and Chatbot Development",
+    description:
+      "Custom AI assistants for lead qualification, support, and customer interactions on web, WhatsApp, or internal portals.",
+    deliverables: [
+      "Website and WhatsApp chatbot setup",
+      "Knowledge base and FAQ training",
+      "Lead capture and qualification logic",
+      "Human handoff and conversation analytics",
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "Business Automation with AI",
+    description:
+      "AI-powered workflows that reduce manual repetitive work and accelerate operations across sales, support, and admin.",
+    deliverables: [
+      "Automated document and email workflows",
+      "Smart task routing and follow-ups",
+      "CRM and back-office automation",
+      "Operational reporting and alerts",
+    ],
+  },
+  {
+    icon: Search,
+    title: "SEO Optimization",
+    description:
+      "Technical and on-page SEO improvements to increase visibility, drive qualified traffic, and improve local discoverability.",
+    deliverables: [
+      "Technical SEO audit and fixes",
+      "Keyword mapping and on-page optimization",
+      "Schema, metadata, and internal linking",
+      "Performance and Core Web Vitals tuning",
+    ],
+  },
 ];
 
 export default function Services() {
@@ -98,7 +137,7 @@ export default function Services() {
             Digital products engineered for <span className="text-gradient">measurable business ROI</span>
           </>
         }
-        description="From websites to custom systems, every service is built to improve conversion, speed operations, and support growth."
+        description="From websites to AI agents and SEO, every service is built to improve conversion, speed operations, and support growth."
         backgroundImage="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80"
       >
         <Button className="gradient-bg text-white rounded-full px-8 h-12 hover:opacity-90" asChild>
