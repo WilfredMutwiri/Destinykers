@@ -1,275 +1,238 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, Globe, Smartphone, Zap, CheckCircle, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  ShoppingCart,
+  Landmark,
+  Briefcase,
+  HeartPulse,
+  Smartphone,
+  Wallet,
+  CalendarClock,
+  Boxes,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import { TestimonialCard } from "@/components/ui/testimonial-card";
-import { PortfolioCard } from "@/components/ui/portfolio-card";
 import { HeroSection } from "@/components/ui/hero-section";
+import { PortfolioCard } from "@/components/ui/portfolio-card";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
 
-const services = [
+const sectors = [
   {
-    icon: Code,
-    title: "Custom Software Systems",
-    description: "Build powerful business management systems, enterprise tools, and industry-specific platforms tailored to your needs.",
-    features: ["Business management", "Enterprise tools", "Industry platforms"],
+    icon: ShoppingCart,
+    title: "E-commerce & Retail",
+    insight: "Professional e-commerce experiences often outperform social-only selling with stronger conversion and trust.",
+    focus: ["Product catalogs", "M-Pesa checkout", "Delivery tracking", "Stock sync"],
   },
   {
-    icon: Globe,
-    title: "Website Development",
-    description: "Create stunning, SEO-optimized websites that convert visitors into customers with modern, responsive designs.",
-    features: ["Corporate websites", "Landing pages", "Admin dashboards"],
+    icon: Landmark,
+    title: "Fintech & SME Tools",
+    insight: "Kenya's fintech wave creates demand for secure, scalable software and smooth embedded payment flows.",
+    focus: ["Sacco portals", "Lending dashboards", "Tax automation", "Merchant tools"],
   },
+  {
+    icon: Briefcase,
+    title: "Professional Services",
+    insight: "Most clients search online first, so authority websites and lead systems directly affect pipeline quality.",
+    focus: ["Portfolio sites", "Lead capture CRM", "Appointment booking", "Client portals"],
+  },
+  {
+    icon: HeartPulse,
+    title: "Hospitality & Health",
+    insight: "24/7 digital access is now expected across tourism, fitness, clinics, and modern wellness operations.",
+    focus: ["Online reservations", "Telehealth journeys", "Membership management", "Automated reminders"],
+  },
+];
+
+const capabilities = [
   {
     icon: Smartphone,
-    title: "Mobile Applications",
-    description: "Develop user-focused Android & iOS apps with seamless backend integration and beautiful UI/UX.",
-    features: ["Android & iOS", "Cross-platform", "API integration"],
+    title: "Mobile-First UX",
+    description: "Built for Kenyan users where most traffic is mobile and decision speed matters.",
   },
   {
-    icon: Zap,
-    title: "AI Automation",
-    description: "Implement intelligent workflows and automation that streamline operations and boost efficiency.",
-    features: ["Process automation", "AI-powered CRM", "Data systems"],
+    icon: Wallet,
+    title: "M-Pesa & Daraja API",
+    description: "Secure collection, payouts, and real-time payment status inside your website or business system.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Booking Workflows",
+    description: "Appointments, consultations, reservations, and class scheduling from one streamlined flow.",
+  },
+  {
+    icon: Boxes,
+    title: "Inventory & Ops Tools",
+    description: "Custom dashboards for stock, reporting, tax tracking, and operational automation.",
+  },
+];
+
+const featuredProjects = [
+  {
+    title: "Debsploit Solutions",
+    category: "Corporate Website",
+    description: "Professional technology website focused on trust, service clarity, and conversion-oriented structure.",
+    technologies: ["Responsive UI", "SEO", "Lead Funnels"],
+    projectUrl: "https://debsploitsolutions.com/",
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Wake and Shine",
+    category: "Service Brand Site",
+    description: "Modern marketing website with clear service journeys and mobile-first engagement design.",
+    technologies: ["Brand Story", "Landing UX", "Fast Load"],
+    projectUrl: "https://wakeandshine.co.ke/",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "FitHub KE",
+    category: "Fitness Platform",
+    description: "Member-facing fitness experience with accessible navigation and onboarding flow.",
+    technologies: ["Fitness UX", "Onboarding", "Interactive Content"],
+    projectUrl: "https://fithubke.vercel.app/welcome",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Beach Life Fitness",
+    category: "Hospitality & Health",
+    description: "Lifestyle-focused website supporting class discovery, trust signals, and inbound client actions.",
+    technologies: ["Conversion Design", "Brand Content", "Mobile UI"],
+    projectUrl: "https://beachlifefitness.co.ke/",
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Kamuganka Portfolio",
+    category: "Professional Services",
+    description: "Personal portfolio with clear value positioning and polished presentation for client acquisition.",
+    technologies: ["Portfolio UX", "Clean Layout", "CTA Strategy"],
+    projectUrl: "https://kamuganka.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Squidlight",
+    category: "Creative Website",
+    description: "Bold web presentation with modern visual language and strong digital brand framing.",
+    technologies: ["Creative Direction", "Visual Identity", "Web Design"],
+    projectUrl: "https://squidlight.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 const testimonials = [
   {
-    quote: "Destinykers Technologies transformed our business operations with their custom software solution. The team was professional, responsive, and delivered beyond our expectations.",
-    author: "James Okonkwo",
-    role: "CEO",
-    company: "FitLife Gyms",
+    quote:
+      "Destinykers helped us move from social-only selling to a real online store with smooth mobile checkout. Orders became easier to track immediately.",
+    author: "Mercy N.",
+    role: "Founder",
+    company: "Nairobi Retail Brand",
     rating: 5,
   },
   {
-    quote: "Their AI automation solution reduced our manual processes by 70%. The ROI was visible within the first month. Highly recommend their services.",
-    author: "Sarah Adeyemi",
-    role: "Operations Director",
-    company: "Swift Logistics",
+    quote:
+      "The booking portal and reminders reduced missed appointments and made operations predictable. Their process was clear from day one.",
+    author: "Dr. Brian K.",
+    role: "Clinic Director",
+    company: "Kiambu Health Practice",
     rating: 5,
   },
   {
-    quote: "The mobile app they built for us has received amazing feedback from our users. Clean design, smooth performance, and excellent support throughout.",
-    author: "Michael Chen",
-    role: "Product Manager",
-    company: "EduTech Solutions",
+    quote:
+      "They built the exact SME dashboard we needed for inventory and reports. We now make decisions from data instead of guesswork.",
+    author: "Pauline W.",
+    role: "Operations Lead",
+    company: "SME Distributor",
     rating: 5,
   },
-];
-
-const portfolioPreview = [
-  {
-    title: "FitPro Gym Management System",
-    category: "Custom Software",
-    description: "Complete gym management platform with member tracking, billing, and scheduling features.",
-    technologies: ["React", "Node.js", "PostgreSQL"],
-  },
-  {
-    title: "Swift Logistics Platform",
-    category: "Web Application",
-    description: "Real-time delivery tracking and fleet management system for logistics companies.",
-    technologies: ["Next.js", "Python", "AWS"],
-  },
-  {
-    title: "EduLearn Mobile App",
-    category: "Mobile App",
-    description: "Cross-platform educational app with interactive courses and progress tracking.",
-    technologies: ["React Native", "Firebase", "AI"],
-  },
-];
-
-const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "30+", label: "Happy Clients" },
-  { value: "5+", label: "Years Experience" },
-  { value: "98%", label: "Client Satisfaction" },
 ];
 
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section with Background */}
       <HeroSection
-        label="🚀 Innovative Digital Solutions"
+        label="Engineering Reliable Digital Solutions"
         title={
           <>
-            Building Digital Solutions That{" "}
-            <span className="text-secondary">Drive Growth</span>
+            Websites and systems that turn <span className="text-gradient">traffic into revenue</span>
           </>
         }
-        description="Custom software systems, websites, mobile applications, and AI-powered automations for businesses across Africa and beyond."
+        description="We build high-conversion websites, M-Pesa integrated platforms, and custom operational systems for growth-stage Kenyan businesses."
+        backgroundImage="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 h-12" asChild>
-            <Link to="/contact">
-              Book a Demo
-            </Link>
+          <Button size="lg" className="rounded-full px-8 h-12 gradient-bg text-white hover:opacity-90" asChild>
+            <Link to="/contact">Book a Strategy Call</Link>
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-8 h-12 border-white/30 text-white hover:bg-white/10" asChild>
-            <Link to="/services">
-              Get a Quote
-            </Link>
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-full px-8 h-12 border-white/30 text-white hover:bg-white/10"
+            asChild
+          >
+            <Link to="/portfolio">See Live Projects</Link>
           </Button>
         </div>
       </HeroSection>
 
-      {/* Products/Services Section */}
-      <section className="py-20 md:py-28 bg-muted/30">
+      <section className="reveal-on-scroll py-12 border-y border-white/10 bg-slate-900/55">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-lg uppercase tracking-wider">Our Services</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Everything you need to succeed
-            </h2>
-            <p className="text-secondary text-lg max-w-2xl mx-auto">
-              From custom software to AI automation. Use them together or choose what fits your business.
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {[
+              { value: "25%+", label: "Higher conversion with professional sites" },
+              { value: "70%", label: "Clients who search online first" },
+              { value: "6+", label: "Live projects showcased" },
+              { value: "24hrs", label: "Typical first response time" },
+            ].map((stat) => (
+              <div key={stat.label} className="surface-panel p-5">
+                <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
+                <p className="text-sm text-slate-300 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal-on-scroll py-20 md:py-24 section-fade">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mb-12">
+            <p className="text-secondary font-semibold uppercase tracking-wider text-sm">Priority Sectors</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Built around fast digital adoption in Kenya</h2>
+            <p className="text-slate-300">
+              We focus where digital tools create immediate revenue, efficiency, and trust: e-commerce, fintech-driven SMEs,
+              professional services, and hospitality/health businesses.
             </p>
           </div>
 
-          {/* Service Cards - Alternating layout */}
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <span className="inline-block px-3 py-1 bg-secondary/20 text-secondary text-xs font-medium rounded-full uppercase tracking-wider mb-4">
-                    {service.features[0]}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-secondary mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <Link 
-                    to="/services" 
-                    className="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+          <div className="grid md:grid-cols-2 gap-6">
+            {sectors.map((sector) => (
+              <article key={sector.title} className="surface-panel p-7">
+                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-5">
+                  <sector.icon className="h-6 w-6 text-white" />
                 </div>
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
-                    <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center mb-6">
-                      <service.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                          <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                <h3 className="text-2xl font-semibold text-white mb-3">{sector.title}</h3>
+                <p className="text-slate-300 mb-5">{sector.insight}</p>
+                <ul className="space-y-2">
+                  {sector.focus.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-slate-100">
+                      <CheckCircle2 className="h-4 w-4 text-secondary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* increments stats on scroll */}
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-white/80 text-sm md:text-base">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-secondary font-semibold text-lg uppercase tracking-wider">Why Choose Us</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary/90 mt-3 mb-6">
-                Your Trusted Technology Partner
-              </h2>
-              <p className="text-secondary mb-8">
-                We combine technical expertise with a deep understanding of business needs to deliver solutions that truly make a difference.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Custom-tailored solutions for your specific needs",
-                  "Experienced team with proven track record",
-                  "Scalable architecture for future growth",
-                  "Ongoing support and maintenance",
-                  "Transparent communication throughout",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-secondary">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Button asChild className="bg-primary hover:bg-primary/90 rounded-full px-6">
-                  <Link to="/why-us">
-                    Learn More About Us
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-muted rounded-2xl p-8 border border-border">
-                <div className="bg-card rounded-xl p-8 shadow-lg">
-                  <div className="w-20 h-20 rounded-2xl bg-secondary mx-auto mb-6 flex items-center justify-center">
-                    <Zap className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground text-center mb-2">Innovation First</h3>
-                  <p className="text-muted-foreground text-center text-sm">
-                    We leverage cutting-edge technologies to build future-proof solutions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Preview Section */}
-      <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-lg uppercase tracking-wider">Our Work</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary/90 mt-3 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-secondary max-w-2xl mx-auto">
-              Take a look at some of our recent work and see how we've helped businesses achieve their goals.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioPreview.map((project, index) => (
-              <PortfolioCard
-                key={index}
-                title={project.title}
-                category={project.category}
-                description={project.description}
-                technologies={project.technologies}
-              />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8" asChild>
-              <Link to="/portfolio">
-                View All Projects
+          <div className="mt-10">
+            <Button variant="outline" className="border-slate-500 text-slate-100 hover:bg-white/10 rounded-full px-6" asChild>
+              <Link to="/industries">
+                Explore Sector Playbooks
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -277,22 +240,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 md:py-28">
+      <section className="reveal-on-scroll py-20 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-lg uppercase tracking-wider">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary/90 mt-3 mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-secondary max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about working with us.
+          <div className="max-w-3xl mb-12">
+            <p className="text-secondary font-semibold uppercase tracking-wider text-sm">What You Get</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Conversion-driven systems, not just pretty pages</h2>
+            <p className="text-slate-300">
+              Every build is designed around measurable business outcomes: more leads, faster payment cycles,
+              and lower admin overhead.
             </p>
           </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {capabilities.map((capability) => (
+              <div key={capability.title} className="surface-panel p-6">
+                <capability.icon className="h-6 w-6 text-secondary mb-4" />
+                <h3 className="font-semibold text-lg text-white mb-2">{capability.title}</h3>
+                <p className="text-sm text-slate-300">{capability.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal-on-scroll py-20 md:py-24 section-fade">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div className="max-w-3xl">
+              <p className="text-secondary font-semibold uppercase tracking-wider text-sm">Selected Work</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Websites and systems already live</h2>
+              <p className="text-slate-300">A sample of projects delivered across business, fitness, and service categories.</p>
+            </div>
+            <Button className="rounded-full gradient-bg text-white hover:opacity-90" asChild>
+              <Link to="/portfolio">View Full Portfolio</Link>
+            </Button>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {featuredProjects.map((project) => (
+              <PortfolioCard
+                key={project.title}
+                title={project.title}
+                category={project.category}
+                description={project.description}
+                technologies={project.technologies}
+                projectUrl={project.projectUrl}
+                image={project.image}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal-on-scroll py-20 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-secondary font-semibold uppercase tracking-wider text-sm">Client Confidence</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Why clients keep referring us</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial) => (
               <TestimonialCard
-                key={index}
+                key={testimonial.author}
                 quote={testimonial.quote}
                 author={testimonial.author}
                 role={testimonial.role}
@@ -301,43 +309,31 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="rounded-full px-8 border-primary text-primary hover:bg-primary hover:text-white" asChild>
-              <Link to="/testimonials">
-                Read More Reviews
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-secondary">
+      <section className="reveal-on-scroll py-20 md:py-24 bg-slate-950 border-y border-white/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-white/80 mb-10">
-              Let's discuss how we can help you achieve your goals with custom digital solutions.
+          <div className="max-w-4xl mx-auto text-center">
+            <Sparkles className="h-9 w-9 text-secondary mx-auto mb-5 animate-drift" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to scale your digital presence?</h2>
+            <p className="text-lg text-slate-300 mb-9">
+              We will map your business goals, recommend the right stack, and ship a solution that pays for itself quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12" asChild>
+              <Button size="lg" className="gradient-bg rounded-full px-8 h-12 text-white hover:opacity-90" asChild>
                 <Link to="/contact">
-                  Get a Free Consultation
+                  Start Your Project
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="rounded-full px-8 h-12 border-white/30 text-white hover:bg-white/10"
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 h-12 border-slate-500 text-slate-100 hover:bg-white/10"
                 asChild
               >
-                <Link to="/services">
-                  Explore Services
-                </Link>
+                <Link to="/process">See How We Deliver</Link>
               </Button>
             </div>
           </div>

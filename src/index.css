@@ -1,80 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Destinykers Technologies Design System - Blue & Dark Theme */
-
 @layer base {
-:root {
-    /* Light mode - Destinykers brand colors from logo */
+  :root {
     --background: 0 0% 100%;
-    --foreground: 207 63% 33%;
+    --foreground: 215 22% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 207 63% 33%;
+    --card-foreground: 221 56% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 207 63% 33%;
+    --popover-foreground: 221 56% 18%;
 
-    --primary: 207 63% 33%;
+    --primary: 207 69% 31%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 32 93% 54%;
+    --secondary: 28 90% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 207 20% 46%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 14% 32%;
 
-    --accent: 32 93% 54%;
+    --accent: 0 0% 10%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 207 63% 33%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 207 69% 31%;
 
-    --radius: 0.5rem;
-
-    /* Custom tokens */
-    --surface: 207 63% 33%;
+    --surface: 0 0% 9%;
     --surface-foreground: 0 0% 100%;
+
+    --radius: 0.8rem;
   }
 
-.dark {
-    /* Dark mode - Destinykers brand colors */
-    --background: 207 63% 10%;
-    --foreground: 210 40% 98%;
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 96%;
 
-    --card: 207 50% 14%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 10% 9%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 207 50% 14%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 10% 9%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 32 93% 54%;
+    --primary: 207 69% 31%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 207 63% 33%;
+    --secondary: 28 90% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 207 40% 20%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 220 8% 15%;
+    --muted-foreground: 0 0% 72%;
 
-    --accent: 32 93% 54%;
+    --accent: 0 0% 98%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 207 40% 20%;
-    --input: 207 40% 20%;
-    --ring: 32 93% 54%;
+    --border: 220 8% 24%;
+    --input: 220 8% 24%;
+    --ring: 28 90% 55%;
 
-    /* Custom tokens */
-    --surface: 207 50% 14%;
-    --surface-foreground: 210 40% 98%;
+    --surface: 0 0% 9%;
+    --surface-foreground: 0 0% 96%;
   }
 }
 
@@ -83,75 +79,96 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Sora", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
-  .gradient-text {
-    @apply text-primary;
+  .text-gradient {
+    @apply text-secondary;
   }
 
   .gradient-bg {
     @apply bg-primary;
   }
 
-  .glass {
-    @apply bg-card/80 backdrop-blur-lg border border-border/50;
+  .surface-panel {
+    @apply rounded-2xl border border-border/70 bg-card/90 shadow-lg backdrop-blur;
+    box-shadow: 0 22px 44px -34px rgb(0 0 0 / 55%);
   }
 
-  .glow {
-    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.3);
+  .hero-mesh {
+    background-image: radial-gradient(circle at 14% 22%, hsl(var(--secondary) / 0.2), transparent 34%),
+      radial-gradient(circle at 82% 18%, hsl(var(--primary) / 0.3), transparent 40%);
+  }
+
+  .section-fade {
+    background-color: hsl(var(--background));
   }
 
   .text-balance {
     text-wrap: balance;
   }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
   50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    transform: translateY(-8px);
   }
 }
 
@@ -159,22 +176,6 @@
   animation: fade-in 0.6s ease-out forwards;
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+.animate-drift {
+  animation: drift 4s ease-in-out infinite;
 }
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Staggered animations */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }

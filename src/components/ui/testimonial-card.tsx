@@ -21,7 +21,7 @@ export function TestimonialCard({
   return (
     <div
       className={cn(
-        "p-6 md:p-8 rounded-2xl bg-card border border-border",
+        "reveal-on-scroll p-6 md:p-8 rounded-2xl bg-card border border-border",
         "hover:border-primary/50 transition-colors duration-300",
         className
       )}

@@ -1,4 +1,15 @@
-import { ExternalLink, LucideIcon, Code, Globe, Smartphone, ShoppingCart, Building2, Cloud, Cpu, Plane } from "lucide-react";
+import {
+  ExternalLink,
+  LucideIcon,
+  Code,
+  Globe,
+  Smartphone,
+  ShoppingCart,
+  Building2,
+  Cloud,
+  Cpu,
+  Plane,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Map categories to icons
@@ -19,6 +30,7 @@ interface PortfolioCardProps {
   description: string;
   technologies: string[];
   image?: string;
+  projectUrl?: string;
   className?: string;
 }
 
@@ -28,14 +40,15 @@ export function PortfolioCard({
   description,
   technologies,
   image,
+  projectUrl,
   className,
 }: PortfolioCardProps) {
   const CategoryIcon = categoryIcons[category] || Code;
 
   return (
-    <div
+    <article
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-card border border-border",
+        "reveal-on-scroll group relative overflow-hidden rounded-2xl bg-card border border-border",
         "hover:border-secondary/50 transition-all duration-300",
         className
       )}
@@ -81,6 +94,17 @@ export function PortfolioCard({
             </span>
           ))}
         </div>
+        {projectUrl ? (
+          <a
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-5 hover:text-secondary transition-colors"
+          >
+            View Live Project
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        ) : null}
       </div>
 
       {/* Hover Overlay */}
@@ -89,6 +113,6 @@ export function PortfolioCard({
           <ExternalLink className="w-5 h-5 text-white" />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,75 +1,80 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Facebook, Globe } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const footerLinks = {
   company: [
-    { name: "About Us", path: "/about" },
-    { name: "Why Choose Us", path: "/why-us" },
+    { name: "About", path: "/about" },
+    { name: "Our Process", path: "/process" },
+    { name: "Industries", path: "/industries" },
     { name: "Portfolio", path: "/portfolio" },
-    { name: "Testimonials", path: "/testimonials" },
-    { name: "Contact", path: "/contact" },
   ],
   services: [
-    { name: "Custom Software", path: "/services" },
-    { name: "Web Development", path: "/services" },
-    { name: "Mobile Apps", path: "/services" },
-    { name: "AI Automation", path: "/services" },
+    { name: "E-commerce Systems", path: "/services" },
+    { name: "M-Pesa Integrations", path: "/services" },
+    { name: "Booking Platforms", path: "/services" },
+    { name: "SME Automation", path: "/services" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-primary/90 text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
+    <footer className="bg-slate-950 text-slate-100 border-t border-white/10">
+      <div className="container mx-auto px-4 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-6">
-            <Link to="/" className="inline-block">
-              <img 
-                src={logo} 
-                alt="Destinykers Technologies" 
-                className="h-12 w-auto bg-white rounded-full p-1"
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Destinykers Technologies"
+                className="h-11 w-11 rounded-full border border-white/20"
               />
+              <div>
+                <p className="font-semibold">Destinykers Technologies</p>
+                <p className="text-xs text-slate-300">Kenya Digital Build Partner</p>
+              </div>
             </Link>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Empowering businesses through innovative, reliable, and intelligent 
-              digital solutions that drive growth and operational excellence.
+            <p className="text-sm text-slate-300 leading-relaxed">
+              We design conversion-ready websites and systems for Kenyan businesses in
+              retail, fintech, professional services, hospitality, and health.
             </p>
             <div className="flex gap-3">
               <a
                 href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A108271034&keywords=Destinykers%20Technologies&origin=ENTITY_SEARCH_HOME_HISTORY&sid=Ua9"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://web.facebook.com/profile.php?id=61571017756341" target="_blank"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                href="https://web.facebook.com/profile.php?id=61571017756341"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
+              <Link
+                to="/"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                aria-label="Website"
+              >
+                <Globe className="h-5 w-5" />
+              </Link>
             </div>
           </div>
 
-          {/* Company Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Company</h4>
+            <h4 className="font-semibold text-lg mb-5">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -78,15 +83,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Services</h4>
+            <h4 className="font-semibold text-lg mb-5">Core Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -95,59 +99,32 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Contact Us</h4>
+            <h4 className="font-semibold text-lg mb-5">Contact</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-secondary mt-0.5" />
-                <a
-                  href="mailto:info@destinykers.com"
-                  className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
-                >
+              <li className="flex items-start gap-3 text-sm text-slate-300">
+                <Mail className="h-5 w-5 mt-0.5 text-secondary" />
+                <a href="mailto:info@destinykers.co.ke" className="hover:text-white transition-colors">
                   info@destinykers.co.ke
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-secondary mt-0.5" />
-                <a
-                  href="tel:+1234567890"
-                  className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
-                >
+              <li className="flex items-start gap-3 text-sm text-slate-300">
+                <Phone className="h-5 w-5 mt-0.5 text-secondary" />
+                <a href="tel:+254115651863" className="hover:text-white transition-colors">
                   +254 11 5651 863
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-secondary mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">
-                  Moi Avenue, Nairobi - Kenya
-                </span>
+              <li className="flex items-start gap-3 text-sm text-slate-300">
+                <MapPin className="h-5 w-5 mt-0.5 text-secondary" />
+                <span>Moi Avenue, Nairobi, Kenya</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} Destinykers Technologies. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link
-                to="/privacy"
-                className="text-primary-foreground/60 hover:text-secondary transition-colors text-sm"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-primary-foreground/60 hover:text-secondary transition-colors text-sm"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+        <div className="mt-12 pt-6 border-t border-white/10 text-sm text-slate-400 flex flex-col md:flex-row justify-between gap-3">
+          <p>© {new Date().getFullYear()} Destinykers Technologies. All rights reserved.</p>
+          <p>Built for growth-focused Kenyan businesses.</p>
         </div>
       </div>
     </footer>

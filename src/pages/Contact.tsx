@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock3, MessageSquareText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,37 +11,37 @@ import { useToast } from "@/hooks/use-toast";
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Us",
-    value: "info@destinykers.com",
-    link: "mailto:info@destinykers.com",
+    title: "Email",
+    value: "info@destinykers.co.ke",
+    link: "mailto:info@destinykers.co.ke",
   },
   {
     icon: Phone,
-    title: "Call Us",
-    value: "+1 (234) 567-890",
-    link: "tel:+1234567890",
+    title: "Phone",
+    value: "+254 11 5651 863",
+    link: "tel:+254115651863",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    value: "Your Business Address",
+    title: "Location",
+    value: "Moi Avenue, Nairobi, Kenya",
     link: null,
   },
   {
-    icon: Clock,
-    title: "Business Hours",
-    value: "Mon - Fri: 9AM - 6PM",
+    icon: Clock3,
+    title: "Working Hours",
+    value: "Mon - Fri, 8:30 AM - 6:00 PM",
     link: null,
   },
 ];
 
 const services = [
-  "Custom Software Development",
-  "Website Design & Development",
-  "Mobile App Development",
-  "AI Automation & Workflows",
-  "Consultation & Strategy",
-  "Other",
+  "E-commerce Website",
+  "M-Pesa Integration",
+  "Booking System",
+  "Inventory Dashboard",
+  "SME/Fintech Portal",
+  "General Consultation",
 ];
 
 export default function Contact() {
@@ -52,6 +52,7 @@ export default function Contact() {
     phone: "",
     company: "",
     service: "",
+    budget: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,22 +68,22 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission - opens email client
-    const subject = encodeURIComponent(`New Inquiry: ${formData.service || "General"}`);
+    const subject = encodeURIComponent(`Project Inquiry: ${formData.service || "General"}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Company: ${formData.company}\n` +
-      `Service: ${formData.service}\n\n` +
-      `Message:\n${formData.message}`
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Company: ${formData.company}\n` +
+        `Service: ${formData.service}\n` +
+        `Budget: ${formData.budget}\n\n` +
+        `Project Details:\n${formData.message}`
     );
-    
-    window.location.href = `mailto:info@destinykers.com?subject=${subject}&body=${body}`;
+
+    window.location.href = `mailto:info@destinykers.co.ke?subject=${subject}&body=${body}`;
 
     toast({
-      title: "Opening email client...",
-      description: "Your default email application will open with the form details.",
+      title: "Opening email app",
+      description: "Your details were prepared for sending to our team.",
     });
 
     setIsSubmitting(false);
@@ -90,97 +91,71 @@ export default function Contact() {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <HeroSection
-        label="Contact Us"
+        label="Contact"
         title={
           <>
-            Let's Build Something{" "}
-            <span className="text-secondary">Amazing Together</span>
+            Let's build your <span className="text-gradient">next growth platform</span>
           </>
         }
-        description="Have a project in mind? We'd love to hear about it. Get in touch and let's discuss how we can help bring your vision to life."
+        description="Share your business goals and we will propose a practical website or system roadmap."
+        backgroundImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1800&q=80"
       />
 
-      {/* Contact Section */}
-      <section className="py-20 md:py-32 bg-muted/30">
+      <section className="reveal-on-scroll py-20 md:py-24 section-fade">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-5 gap-12">
-            {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid lg:grid-cols-5 gap-10">
+            <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-4">
-                  Get in Touch
-                </h2>
-                <p className="text-muted-foreground">
-                  Ready to start your project? Contact us today for a free consultation. 
-                  We'll discuss your requirements and provide a customized solution.
+                <h2 className="text-2xl font-bold text-white mb-3">Talk to us about your project</h2>
+                <p className="text-slate-300">
+                  Whether you need a complete website rebuild, a payment integration, or a custom system, we can help
+                  you move fast with clarity.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
-                      <info.icon className="h-6 w-6 text-white" />
+              <div className="space-y-4">
+                {contactInfo.map((info) => (
+                  <article key={info.title} className="surface-panel p-5 flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-lg gradient-bg flex items-center justify-center shrink-0">
+                      <info.icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-foreground">{info.title}</h4>
+                      <h3 className="font-semibold text-white">{info.title}</h3>
                       {info.link ? (
-                        <a
-                          href={info.link}
-                          className="text-muted-foreground hover:text-secondary transition-colors"
-                        >
+                        <a href={info.link} className="text-slate-300 hover:text-white transition-colors text-sm">
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
+                        <p className="text-slate-300 text-sm">{info.value}</p>
                       )}
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
 
-              {/* Quick Actions */}
-              <div className="p-6 rounded-xl bg-card border border-border">
-                <div className="flex items-center gap-3 mb-4">
-                  <MessageSquare className="h-6 w-6 text-secondary" />
-                  <h4 className="font-semibold text-foreground">Quick Response</h4>
+              <div className="surface-panel p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <MessageSquareText className="h-5 w-5 text-secondary" />
+                  <h3 className="font-semibold text-white">Quick note on response time</h3>
                 </div>
-                <p className="text-muted-foreground text-sm mb-4">
-                  We typically respond to all inquiries within 24 hours during business days.
+                <p className="text-slate-300 text-sm">
+                  We normally respond within 24 hours on business days and can schedule a discovery call immediately.
                 </p>
-                <div className="flex flex-col gap-2">
-                  <Button variant="outline" className="justify-start border-primary text-primary hover:bg-primary hover:text-white" asChild>
-                    <a href="mailto:info@destinykers.com">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Email Us Directly
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="justify-start border-primary text-primary hover:bg-primary hover:text-white" asChild>
-                    <a href="tel:+1234567890">
-                      <Phone className="mr-2 h-4 w-4" />
-                      Schedule a Call
-                    </a>
-                  </Button>
-                </div>
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="p-6 md:p-8 rounded-2xl bg-card border border-border">
-                <h3 className="text-xl font-semibold text-foreground mb-6">
-                  Send Us a Message
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+              <div className="surface-panel p-6 md:p-8">
+                <h3 className="text-xl font-semibold text-white mb-6">Project Brief</h3>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        placeholder="Your full name"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -192,7 +167,7 @@ export default function Contact() {
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="name@company.com"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -200,67 +175,78 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input
                         id="phone"
                         name="phone"
-                        type="tel"
-                        placeholder="+1 234 567 890"
+                        placeholder="+254..."
                         value={formData.phone}
                         onChange={handleChange}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
+                      <Label htmlFor="company">Company / Brand</Label>
                       <Input
                         id="company"
                         name="company"
-                        placeholder="Your Company"
+                        placeholder="Your business name"
                         value={formData.company}
                         onChange={handleChange}
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="service">Service Interested In</Label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service) => (
-                        <option key={service} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div className="space-y-2">
+                      <Label htmlFor="service">Service Needed</Label>
+                      <select
+                        id="service"
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      >
+                        <option value="">Select service</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>
+                            {service}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Estimated Budget</Label>
+                      <Input
+                        id="budget"
+                        name="budget"
+                        placeholder="KES 150,000 - 400,000"
+                        value={formData.budget}
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Your Message *</Label>
+                    <Label htmlFor="message">Project Details *</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your project..."
-                      rows={5}
+                      placeholder="Tell us what you want to launch, improve, or automate."
+                      rows={6}
                       value={formData.message}
                       onChange={handleChange}
                       required
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 rounded-full" disabled={isSubmitting}>
+                  <Button type="submit" size="lg" className="w-full gradient-bg text-white rounded-full" disabled={isSubmitting}>
                     {isSubmitting ? (
-                      "Sending..."
+                      "Preparing..."
                     ) : (
                       <>
-                        Send Message
+                        Send Inquiry
                         <Send className="ml-2 h-5 w-5" />
                       </>
                     )}
@@ -269,23 +255,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Prefer a Quick Chat?
-          </h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Book a free 30-minute consultation call with our team to discuss your project.
-          </p>
-          <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8" asChild>
-            <a href="mailto:info@destinykers.com?subject=Consultation Request">
-              Book a Free Consultation
-            </a>
-          </Button>
         </div>
       </section>
     </Layout>

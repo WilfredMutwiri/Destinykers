@@ -17,7 +17,7 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "flex gap-4 p-6 rounded-xl bg-card/50 border border-border/50",
+        "reveal-on-scroll flex gap-4 p-6 rounded-xl bg-card/50 border border-border/50",
         "hover:bg-card hover:border-primary/30 transition-all duration-300",
         className
       )}

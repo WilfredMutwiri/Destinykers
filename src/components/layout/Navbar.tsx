@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
@@ -9,10 +9,9 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
-  { name: "Solutions", path: "/solutions" },
-  { name: "Why Us", path: "/why-us" },
+  { name: "Industries", path: "/industries" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Testimonials", path: "/testimonials" },
+  { name: "Process", path: "/process" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -21,29 +20,31 @@ export function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-50 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src={logo} 
-              alt="Destinykers Technologies" 
-              className="h-12 w-12 object-cover rounded-full"
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Destinykers Technologies"
+              className="h-11 w-11 object-cover rounded-full border border-white/30"
             />
+            <div className="hidden sm:block">
+              <p className="text-sm font-semibold text-white">Destinykers Technologies</p>
+              <p className="text-xs text-slate-300">Engineering Reliable Digital Solutions</p>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors ",
+                  "px-4 py-2 text-sm font-medium transition-colors rounded-full",
                   location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground-muted hover:text-primary"
+                    ? "text-white bg-white/10"
+                    : "text-slate-200 hover:text-white hover:bg-white/5"
                 )}
               >
                 {link.name}
@@ -51,30 +52,23 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button asChild className="bg-primary hover:bg-primary/90 rounded-full px-6">
-              <Link to="/contact">Book a Demo</Link>
+            <Button asChild className="rounded-full px-6 gradient-bg text-white hover:opacity-90">
+              <Link to="/contact">Book Strategy Call</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-muted"
+            className="lg:hidden p-2 rounded-md text-slate-100 hover:bg-white/10"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-white/10 animate-fade-in">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -82,19 +76,19 @@ export function Navbar() {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "px-4 py-3 text-sm font-medium transition-colors",
+                    "px-4 py-3 text-sm font-medium transition-colors rounded-lg",
                     location.pathname === link.path
-                      ? "text-primary bg-primary/5"
-                      : "text-muted-foreground hover:text-primary hover:bg-muted"
+                      ? "text-white bg-white/10"
+                      : "text-slate-200 hover:text-white hover:bg-white/5"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 px-4">
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 rounded-full">
+              <div className="pt-4 px-1">
+                <Button asChild className="w-full gradient-bg rounded-full text-white">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    Book a Demo
+                    Book Strategy Call
                   </Link>
                 </Button>
               </div>

@@ -98,7 +98,7 @@ export default function Testimonials() {
       />
 
       {/* Featured Testimonial */}
-      <section className="py-12 bg-muted/30">
+      <section className="reveal-on-scroll py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-card border border-border relative">
             <Quote className="absolute top-6 left-6 h-12 w-12 text-secondary/20" />
@@ -121,7 +121,7 @@ export default function Testimonials() {
       </section>
 
       {/* All Testimonials */}
-      <section className="py-20 md:py-32">
+      <section className="reveal-on-scroll py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-secondary font-medium text-sm uppercase tracking-wider">Testimonials</span>
@@ -148,7 +148,7 @@ export default function Testimonials() {
       </section>
 
       {/* Client Logos */}
-      <section className="py-20 md:py-32 bg-muted/30">
+      <section className="reveal-on-scroll py-20 md:py-32 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-secondary font-medium text-sm uppercase tracking-wider">Our Clients</span>
@@ -172,7 +172,7 @@ export default function Testimonials() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-primary">
+      <section className="reveal-on-scroll py-20 md:py-32 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Join Our Growing List of Happy Clients

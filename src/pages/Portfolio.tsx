@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { PortfolioCard } from "@/components/ui/portfolio-card";
@@ -7,154 +7,155 @@ import { HeroSection } from "@/components/ui/hero-section";
 
 const projects = [
   {
-    title: "FitPro Gym Management System",
-    category: "Custom Software",
-    description: "Complete gym management platform with member tracking, subscription billing, class scheduling, and trainer management. Includes a mobile app for gym members.",
-    technologies: ["React", "Node.js", "PostgreSQL", "React Native"],
+    title: "Debsploit Solutions",
+    category: "Corporate Website",
+    description:
+      "Structured corporate website with clear service communication and trust-building content hierarchy.",
+    technologies: ["Responsive Design", "Lead Capture", "SEO Structure"],
+    projectUrl: "https://debsploitsolutions.com/",
+    image:
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Swift Logistics Platform",
-    category: "Web Application",
-    description: "Real-time delivery tracking and fleet management system serving over 500 vehicles. Features route optimization, driver apps, and customer notifications.",
-    technologies: ["Next.js", "Python", "AWS", "MongoDB"],
+    title: "Kamuganka",
+    category: "Professional Portfolio",
+    description:
+      "Personal brand site for professional visibility, authority positioning, and client conversion.",
+    technologies: ["Portfolio UX", "Brand Messaging", "Clean UI"],
+    projectUrl: "https://kamuganka.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "EduLearn Mobile App",
-    category: "Mobile App",
-    description: "Cross-platform educational app with interactive courses, video lessons, quizzes, and progress tracking. Used by over 10,000 students.",
-    technologies: ["React Native", "Firebase", "Node.js"],
+    title: "Wake and Shine",
+    category: "Service Business",
+    description:
+      "Service-focused website with strong CTA flow and mobile-oriented interaction model.",
+    technologies: ["Conversion Layout", "Mobile First", "Fast Performance"],
+    projectUrl: "https://wakeandshine.co.ke/",
+    image:
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "MediCare Hospital System",
-    category: "Enterprise Software",
-    description: "Comprehensive hospital management system handling patient records, appointments, billing, and pharmacy management for a 200-bed facility.",
-    technologies: ["Angular", "Java", "MySQL", "Docker"],
+    title: "Squidlight",
+    category: "Creative Web Presence",
+    description:
+      "Modern web experience with expressive visual language and compelling brand storytelling.",
+    technologies: ["Creative UI", "Motion Design", "Brand Alignment"],
+    projectUrl: "https://squidlight.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "RetailHub E-commerce",
-    category: "E-commerce",
-    description: "Multi-vendor marketplace platform with advanced product management, payment processing, and seller analytics dashboard.",
-    technologies: ["React", "Stripe", "Node.js", "Redis"],
+    title: "FitHub KE",
+    category: "Fitness Platform",
+    description:
+      "Fitness-focused digital experience supporting onboarding and community engagement.",
+    technologies: ["Onboarding UX", "User Journey", "Web App UI"],
+    projectUrl: "https://fithubke.vercel.app/welcome",
+    image:
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "PropertyPro Real Estate",
-    category: "Web Application",
-    description: "Real estate listing and management platform with virtual tours, property comparison, and automated lead generation.",
-    technologies: ["Vue.js", "Laravel", "PostgreSQL"],
-  },
-  {
-    title: "HR Connect Platform",
-    category: "SaaS Product",
-    description: "Cloud-based HR management solution with payroll processing, leave management, and employee self-service portal.",
-    technologies: ["React", "Python", "AWS", "Terraform"],
-  },
-  {
-    title: "SmartFarm IoT Dashboard",
-    category: "IoT Solution",
-    description: "Agricultural monitoring dashboard integrating IoT sensors for crop monitoring, irrigation control, and yield prediction.",
-    technologies: ["React", "Python", "MQTT", "TensorFlow"],
-  },
-  {
-    title: "TravelEase Booking App",
-    category: "Mobile App",
-    description: "Travel booking application with flight and hotel search, itinerary planning, and real-time travel updates.",
-    technologies: ["Flutter", "Firebase", "Node.js"],
+    title: "Beach Life Fitness",
+    category: "Hospitality and Health",
+    description:
+      "Brand-forward fitness website aimed at retention, program discovery, and quick customer action.",
+    technologies: ["Program Pages", "Conversion CTA", "Lifestyle Branding"],
+    projectUrl: "https://beachlifefitness.co.ke/",
+    image:
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
   },
 ];
-
-const categories = ["All", "Custom Software", "Web Application", "Mobile App", "E-commerce", "Enterprise Software", "SaaS Product", "IoT Solution"];
 
 export default function Portfolio() {
   return (
     <Layout>
-      {/* Hero Section */}
       <HeroSection
-        label="Our Portfolio"
+        label="Portfolio"
         title={
           <>
-            Projects That{" "}
-            <span className="text-secondary">Speak Results</span>
+            Proven websites and systems <span className="text-gradient">already delivering value</span>
           </>
         }
-        description="Explore our portfolio of successful projects across various industries. Each project represents our commitment to quality and client success."
-      />
+        description="Explore live projects we have designed and developed for businesses and professionals."
+        backgroundImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=80"
+      >
+        <Button className="gradient-bg text-white rounded-full px-8 h-12 hover:opacity-90" asChild>
+          <Link to="/contact">Build My Project</Link>
+        </Button>
+      </HeroSection>
 
-      {/* Portfolio Grid */}
-      <section className="py-20 md:py-32 bg-muted/30">
+      <section className="reveal-on-scroll py-20 md:py-24 section-fade">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-medium text-sm uppercase tracking-wider">Case Studies</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              A selection of projects that showcase our expertise across different technologies and industries.
-            </p>
-          </div>
-          
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {categories.slice(0, 5).map((category) => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category === "All"
-                    ? "bg-primary text-white"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <PortfolioCard
-                key={index}
+                key={project.title}
                 title={project.title}
                 category={project.category}
                 description={project.description}
                 technologies={project.technologies}
+                projectUrl={project.projectUrl}
+                image={project.image}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 md:py-32">
+      <section className="reveal-on-scroll py-20 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "50+", label: "Projects Completed" },
-              { value: "30+", label: "Happy Clients" },
-              { value: "15+", label: "Industries Served" },
-              { value: "98%", label: "Client Retention" },
-            ].map((stat, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-card border border-border">
-                <div className="text-4xl font-bold text-secondary mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+          <div className="surface-panel p-8 md:p-10 max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">What our project delivery emphasizes</h2>
+                <ul className="space-y-3">
+                  {[
+                    "Business-focused messaging and page hierarchy",
+                    "Mobile-first performance and UX quality",
+                    "Lead and payment journey optimization",
+                    "Scalable structure for future features",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-slate-100">
+                      <CheckCircle2 className="h-4 w-4 text-secondary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+              <div className="space-y-3">
+                {projects.slice(0, 3).map((project) => (
+                  <a
+                    key={project.title}
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:border-secondary/40 transition-colors"
+                  >
+                    <div>
+                      <p className="font-semibold text-white">{project.title}</p>
+                      <p className="text-sm text-slate-300">{project.category}</p>
+                    </div>
+                    <ExternalLink className="h-4 w-4 text-secondary" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-primary">
+      <section className="reveal-on-scroll py-20 md:py-24 bg-slate-950 border-y border-white/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Want to Be Our Next Success Story?
-          </h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help bring your project to life.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to be our next case study?</h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+            Tell us your sector, business target, and timeline. We will shape a practical roadmap for launch.
           </p>
-          <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8" asChild>
+          <Button size="lg" className="gradient-bg text-white rounded-full px-8 h-12 hover:opacity-90" asChild>
             <Link to="/contact">
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Start Your Build
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
